@@ -1,0 +1,42 @@
+>aws ec2 create-vpc --cidr-block 192.168.100.0/24
+{
+    "Vpc": {
+        "CidrBlock": "192.168.100.0/24",
+        "DhcpOptionsId": "dopt-984a90e2",
+        "State": "pending",
+        "VpcId": "vpc-0c575ac99a3dd35ef",
+        "OwnerId": "442359104502",
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlockAssociationSet": [],
+        "CidrBlockAssociationSet": [
+            {
+                "AssociationId": "vpc-cidr-assoc-02238f75a56bf0735",
+                "CidrBlock": "192.168.100.0/24",
+                "CidrBlockState": {
+                    "State": "associated"
+                }
+            }
+        ],
+        "IsDefault": false
+    }
+}
+
+
+>aws ec2 create-subnet --vpc-id vpc-0c575ac99a3dd35ef --cidr-block 192.168.100.0/25
+{
+    "Subnet": {
+        "AvailabilityZone": "us-east-1e",
+        "AvailabilityZoneId": "use1-az3",
+        "AvailableIpAddressCount": 123,
+        "CidrBlock": "192.168.100.0/25",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false,
+        "State": "available",
+        "SubnetId": "subnet-0406ad4c26c7590df",
+        "VpcId": "vpc-0c575ac99a3dd35ef",
+        "OwnerId": "442359104502",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "SubnetArn": "arn:aws:ec2:us-east-1:442359104502:subnet/subnet-0406ad4c26c7590df"
+    }
+}
